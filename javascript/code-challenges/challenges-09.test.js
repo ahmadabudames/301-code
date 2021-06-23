@@ -47,6 +47,9 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
+  if (Object.values(obj).includes(value)) { // obj
+    return true;
+  } return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,8 +133,11 @@ const characters = [
 ];
 
 const getHouses = (arr) => {
-  let houses = [];
   // Solution code here...
+  let houses = [];
+  arr.forEach(i=>{
+    houses.push(i.house)
+  })
   return houses;
 };
 
@@ -149,6 +155,17 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let data = false;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name === character) {
+      let arrayLengthTest = Object.values(arr[i]); // I didn't understand the code well
+      if (arrayLengthTest.length > 3) {
+        data = true;
+      }
+      return data;
+    }
+  }
 
 };
 
