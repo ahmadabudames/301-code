@@ -24,6 +24,8 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
+  let numArr = arr.filter((n)=>Number(n));
+  return numArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,6 +54,11 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+  let oddArr=arr.filter(n =>{
+    return (n%2);
+  })
+ 
+  return oddArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,6 +71,10 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  let item=arr.filter(n=>{
+    return(forbiddenValues.indexOf(n) === -1)
+    })
+    return item;
 };
 
 /* ------------------------------------------------------------------------------------------------
